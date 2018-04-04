@@ -5,17 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.ivmiit</groupId>
-    <artifactId>database-example</artifactId>
+    <artifactId>hibernate-example</artifactId>
     <version>0.1</version>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.5.Final</version>
+        </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.1.4</version>
+            <version>42.2.2</version>
         </dependency>
     </dependencies>
-
 
 </project>
