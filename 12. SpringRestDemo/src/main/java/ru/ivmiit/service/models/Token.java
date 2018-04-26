@@ -1,12 +1,15 @@
 package ru.ivmiit.service.models;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 /**
- * 18.04.2018
- * Car
+ * 25.04.2018
+ * Token
  *
  * @author Sidikov Marsel (First Software Engineering Platform)
  * @version v1.0
@@ -15,16 +18,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString(exclude = "owner")
 @Entity
-@Table(name = "fix_car")
-public class Car {
+public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String model;
+
+    private String value;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private User owner;
+    @JoinColumn(name = "user_id")
+    private User user;
 }

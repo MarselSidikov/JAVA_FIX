@@ -1,7 +1,5 @@
 package ru.ivmiit.service.app;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -10,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import javax.sql.DataSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * 18.04.2018
@@ -24,7 +22,13 @@ import javax.sql.DataSource;
 @ComponentScan(basePackages = "ru.ivmiit.service")
 @EnableJpaRepositories(basePackages = "ru.ivmiit.service.repositories")
 @EntityScan(basePackages = "ru.ivmiit.service.models")
-public class Application {
+
+public class Application extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**");
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {

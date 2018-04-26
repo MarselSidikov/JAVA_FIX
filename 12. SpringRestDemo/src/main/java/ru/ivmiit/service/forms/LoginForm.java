@@ -1,18 +1,20 @@
 package ru.ivmiit.service.forms;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * 18.04.2018
- * UserForm
+ * 25.04.2018
+ * LoginForm
  *
  * @author Sidikov Marsel (First Software Engineering Platform)
  * @version v1.0
  */
 @Data
-public class UserForm {
-    private String firstName;
-    private String lastName;
+@AllArgsConstructor
+@NoArgsConstructor
+public class LoginForm {
     private String login;
     private String password;
 }

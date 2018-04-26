@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.ivmiit.service.forms.UserForm;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * 18.04.2018
@@ -37,10 +37,6 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     private State state;
 
-    public static User from(UserForm form) {
-        return User.builder()
-                .firstName(form.getFirstName())
-                .lastName(form.getLastName())
-                .build();
-    }
+    @OneToMany(mappedBy = "user")
+    List<Token> tokens;
 }

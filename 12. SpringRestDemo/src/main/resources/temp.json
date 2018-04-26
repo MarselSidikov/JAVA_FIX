@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "firstName": "Марсель",
+    "lastName": "Сидиков",
+    "login": "marsel",
+    "hashPassword": "$2a$10$iAa7tWn48tz2.WnK6CAyTuyatmzX8hpFfsuepRqlRML7oKe6qxFNi",
+    "role": "USER",
+    "state": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "firstName": "Андрей",
+    "lastName": "Кутепов",
+    "login": "andrey",
+    "hashPassword": "$2a$10$bfM.C7oUsNTQt/cevxIWFuh6tfHTpuJlIexdMBFE2omQxyV4HLXli",
+    "role": "ADMIN",
+    "state": "ACTIVE"
+  }
+]
