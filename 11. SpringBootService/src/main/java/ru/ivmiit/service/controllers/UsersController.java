@@ -23,16 +23,11 @@ import javax.xml.crypto.Data;
 @Controller
 public class UsersController {
 
-
-    @Value("${my.property}")
-    private String myProperty;
-
     @Autowired
     private UsersRepository usersRepository;
 
     @GetMapping("/users")
     public String getUsersPage(ModelMap model) {
-        System.out.println(myProperty);
         model.addAttribute("usersFromServer", usersRepository.findAll());
         return "users";
     }

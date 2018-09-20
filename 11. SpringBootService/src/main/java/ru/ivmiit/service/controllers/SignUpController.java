@@ -20,7 +20,7 @@ public class SignUpController {
     @Autowired
     private SignUpService service;
 
-    @GetMapping
+    @GetMapping("/signUp")
     public String getSignUpPage() {
         return "signUp";
     }
